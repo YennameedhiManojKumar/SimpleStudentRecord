@@ -29,4 +29,13 @@ public class StudentManager {
         return null;
     }
 
+    public Student findByMarks(double marks) {
+        for (Student s : students) {
+            if (s.getMarks() == marks) {
+                return s;
+            }
+        }
+        return null;
+    }
+
 }

@@ -12,7 +12,8 @@ public class Main {
             System.out.println("1. Add Student");
             System.out.println("2. Display All Students");
             System.out.println("3. Search Student by ID");
-            System.out.println("4. Exit");
+            System.out.println("4. Search Student by Marks");
+            System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
             int choice = sc.nextInt();
 
@@ -45,6 +46,16 @@ public class Main {
                     break;
 
                 case 4:
+                    System.out.print("Enter Marks to search: ");
+                    int searchMarks = sc.nextInt();
+                    Student found2 = manager.findByMarks(searchMarks);
+                    if (found2 != null) {
+                        found2.display();
+                    } else {
+                        System.out.println("Student not found.");
+                    }
+                    break;
+                case 5:
                     System.out.println("Exiting...");
                     sc.close();
                     return;
